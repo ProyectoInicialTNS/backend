@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'com.tns.testProject'
+version ''
+
+sourceCompatibility = 1.7
+
+apply plugin: 'war'
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1'
+}
+
+task localDeploy(type: Copy) {
+    dependsOn 'war'
+    from "build/libs/${appName}"
+    into "${deployPath}"
+}
