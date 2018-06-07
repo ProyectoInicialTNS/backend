@@ -2,21 +2,32 @@ plugins {
     id 'java'
 }
 
-group 'com.tns.testProject'
+group 'com.tns.proyectoInicial'
 version ''
 
 sourceCompatibility = 1.7
 
 apply plugin: 'war'
 
+allprojects {
+	apply plugin: 'java-library'
+	apply plugin: 'jacoco'
+	
+	sourceCompatibility = '1.7'
+	targetCompatibility = '1.7'
 
-
-repositories {
-    mavenCentral()
+	repositories {
+	   mavenCentral()
+	}
+	jacoco {
+		toolVersion = '0.7.6.201602180812'
+	}
 }
 
 dependencies {
+	//test
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    //REST API
     compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1'
 }
 
@@ -24,4 +35,17 @@ task localDeploy(type: Copy) {
     dependsOn 'war'
     from "build/libs/${appName}"
     into "${deployPath}"
+}
+
+test {
+	jacoco {
+		append = false
+		destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+		//	classDumpFile = file("$buildDir/jacoco/classpathdumps")
+		//	classDumpDir = file("$buildDir/jacoco/classpathdumps")
+	}
+}
+
+jar {
+	archiveName = "${baseName}.${extension}"
 }
