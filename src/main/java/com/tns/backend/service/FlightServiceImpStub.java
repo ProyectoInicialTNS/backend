@@ -3,11 +3,12 @@ package com.tns.backend.service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import javax.annotation.PostConstruct;
+import javax.inject.Named;
 
 import com.tns.backend.model.Flight;
 
+
+@Named("flightServiceImpStub")
 public class FlightServiceImpStub implements FlightService{
 
     private List<Flight> flights = new ArrayList<>();
