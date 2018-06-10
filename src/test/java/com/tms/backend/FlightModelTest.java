@@ -27,8 +27,8 @@ public class FlightModelTest {
     public void deberiaObtenerPrecioCorrectamente(){
         Flight avianca = new Flight(new Date(new Long("1525596200000")),100000L,1,"Avianca","http://neuromarketinglatinoamerica.com/wp-content/uploads/2015/06/avion_avianca.png",
                 "Bogotá", "Cartagena");
-        avianca.setCost(55L);
-        Assert.assertEquals(avianca.getCost(),55L);
+        avianca.setBaseCost(55L);
+        Assert.assertEquals(avianca.getBaseCost(),55L);
     }
 
     @Test
@@ -65,6 +65,20 @@ public class FlightModelTest {
         Assert.assertEquals(avianca.getDestiny(),"Cartagena");
         avianca.setDestiny("Bogota");
         Assert.assertEquals("Bogota", avianca.getDestiny());
+    }
+    
+    @Test
+    public void deberiaCalcularBienCostoFinalFinSemana(){
+        Flight avianca = new Flight(new Date(1529798400000L),100000L,1,"Avianca","http://neuromarketinglatinoamerica.com/wp-content/uploads/2015/06/avion_avianca.png",
+                "Bogotá", "Cartagena");
+        Assert.assertEquals(300000L,avianca.getFinalCost());
+    }
+    
+    @Test
+    public void deberiaCalcularBienCostoHora(){
+        Flight avianca = new Flight(new Date(1538550000000L),100000L,1,"Avianca","http://neuromarketinglatinoamerica.com/wp-content/uploads/2015/06/avion_avianca.png",
+                "Bogotá", "Cartagena");
+        Assert.assertEquals(200000L,avianca.getFinalCost());
     }
 
 }

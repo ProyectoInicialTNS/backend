@@ -1,0 +1,61 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#centerImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 { color: #7c795d; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; line-height: 48px; margin: 0; }
+
+
+h2 { color: #7c795d; font-family: 'Trocchi', serif; font-size: 28px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
+
+
+.subheader { font-size: 26px; font-weight: 300; color: #ffcc66; margin: 0 0 24px; }
+
+
+p { color: #4c4a37; font-family: 'Source Sans Pro', sans-serif; font-size: 18px; line-height: 32px; margin: 0 0 24px; }
+
+
+a,button { color: #4c4a37; background: #CFCE9A; text-decoration: none; }
+
+
+a:hover { color: #ffcc66 }
+
+.center {
+margin: auto;
+
+padding: 0px 100px 0px 100px;
+}
+
