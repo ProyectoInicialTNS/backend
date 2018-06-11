@@ -20,7 +20,7 @@ public class FlightController {
 	@Path("/")
 	public Response obtenerVuelos() {
 
-		return Response.status(200).entity(flightService.getAllFlights()).build();
+		return Response.status(200).entity(flightService.getAllFlights()).header("Access-Control-Allow-Origin", "*").build();
 	}
 
 }

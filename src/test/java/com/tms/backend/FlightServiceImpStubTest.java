@@ -13,6 +13,6 @@ public class FlightServiceImpStubTest {
     
     @Test
     public void deberiaConsultarLosVuelosCorrectamente(){
-        Assert.assertEquals(2,flightService.getAllFlights().size());
+        Assert.assertEquals(6,flightService.getAllFlights().size());
     }
 }
