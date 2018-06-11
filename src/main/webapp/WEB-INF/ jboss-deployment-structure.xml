@@ -1,0 +1,12 @@
+<jboss-deployment-structure>
+        <deployment>
+            <!-- ADDED -->
+            <exclusions>
+                <module name="org.hibernate" /> 
+                <module name="org.jboss.logging" />
+            </exclusions>
+            <!-- FINE ADDED -->
+            <dependencies>
+            </dependencies>
+        </deployment>
+    </jboss-deployment-structure>
