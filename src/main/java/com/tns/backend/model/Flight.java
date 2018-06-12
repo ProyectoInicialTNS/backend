@@ -14,9 +14,9 @@ import javax.persistence.Table;
 public class Flight {
 
     //midle cost
-    private final static Long MORNING_COST=new Long("2");
+	public static final Long MORNING_COST=new Long("2");
     //maximum cost
-    private final static Long WEEKENDS_COST=new Long("3");
+    public static final  Long WEEKENDS_COST=new Long("3");
 
     private Date flightDay;
     private long baseCost;
@@ -30,6 +30,7 @@ public class Flight {
     
     
     public Flight() {
+    	super();
 	}
 
 	public Flight(Date flightDay, Long cost, int id, String airline, String flightImageUrl, String origin, String destiny) {

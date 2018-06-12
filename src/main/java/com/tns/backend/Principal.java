@@ -1,6 +1,5 @@
 package com.tns.backend;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.ws.rs.ApplicationPath;
@@ -18,12 +17,11 @@ public class Principal extends Application {
 	
 	/**
 	 * Metodo usado para poblar la base de datos justo despues de su creacion
-	 */
+	 
 	@PostConstruct
 	public void postConstruct(){	
-		//persistenceFlightDao.populateDB();
 		
-	}
+	}*/
 
 }
 

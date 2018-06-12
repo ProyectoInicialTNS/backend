@@ -12,6 +12,7 @@ import com.tns.backend.persistence.PersistenceFlightDao;
 public class FlightServiceImpHibernate implements FlightService{
 
 	public FlightServiceImpHibernate() {
+		super();
 	
 	}
 	
