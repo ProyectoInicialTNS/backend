@@ -20,7 +20,7 @@ public class Principal extends Application {
 	 
 	@PostConstruct
 	public void postConstruct(){	
-		
+		persistenceFlightDao.populateDB();
 	}*/
 
 }

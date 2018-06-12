@@ -1,13 +1,18 @@
 package com.tns.backend.model;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 @Entity
 @Table(name="FLIGHTS")
@@ -26,6 +31,9 @@ public class Flight {
     private String flightImageUrl;
     private String origin;
     private String destiny;
+    
+    @JsonIgnore
+    private List<User> usersList;
 
     
     
@@ -46,6 +54,7 @@ public class Flight {
         this.flightImageUrl = flightImageUrl;
         this.origin = origin;
         this.destiny = destiny;
+        this.usersList = new ArrayList<>();
     }
 
     @Column(name="flightDay")
@@ -121,6 +130,25 @@ public class Flight {
     public void setFinalCost(long finalCost){
     	this.finalCost = finalCost;
     }
+
+    @ManyToMany(mappedBy = "flightsList", fetch = FetchType.EAGER)
+	public List<User> getUsersList() {
+		return usersList;
+	}
+    
+	public void setUsersList(List<User> usersList) {
+		this.usersList = usersList;
+	}
+
+	@Override
+	public String toString() {
+		return "Flight [flightDay=" + flightDay + ", baseCost=" + baseCost + ", finalCost=" + finalCost + ", id=" + id
+				+ ", airline=" + airline + ", flightImageUrl=" + flightImageUrl + ", origin=" + origin + ", destiny="
+				+ destiny + "]";
+	}
+    
+	
+    
     
     
 }

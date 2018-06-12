@@ -48,9 +48,10 @@ public class PersistenceFlightDaoHibernateImp implements PersistenceFlightDao{
         s.save(avianca2);
         s.save(vivaCol);
         s.save(vivaCol1);
-        tx.commit();    
+        tx.commit();
         s.close();
-        sessionFactory.close();
+        
+        
 	}
 			
 			

@@ -1,4 +1,4 @@
-package com.tms.backend;
+package com.tms.backend.flight;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

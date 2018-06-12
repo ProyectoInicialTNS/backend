@@ -1,10 +1,15 @@
-package com.tms.backend;
+package com.tms.backend.flight;
 
 import com.tns.backend.model.Flight;
+import com.tns.backend.model.User;
+
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 
 public class FlightModelTest {
     @Test
@@ -80,5 +85,20 @@ public class FlightModelTest {
                 "Bogotá", "Cartagena");
         Assert.assertEquals(200000L,avianca.getFinalCost());
     }
+    
+    @Test
+    public void deberiaAsignarUsuarioCorrectamente() {
+    	
+    	User user = new User(1072714444L);
+		Flight vuelo = new Flight(new Date(new Long("1525596200000")),100000L,1,"Avianca","http://neuromarketinglatinoamerica.com/wp-content/uploads/2015/06/avion_avianca.png",
+                "Bogotá", "Cartagena");
+		List<User> usuarios = new ArrayList<>();
+		usuarios.add(user);
+		vuelo.setUsersList(usuarios);
+		Assert.assertEquals(user, vuelo.getUsersList().get(0));
+    	
+    }
+    	
+    
 
 }

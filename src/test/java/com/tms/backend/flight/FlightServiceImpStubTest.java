@@ -1,4 +1,4 @@
-package com.tms.backend;
+package com.tms.backend.flight;
 
 import com.tns.backend.service.FlightService;
 import com.tns.backend.service.FlightServiceImpStub;

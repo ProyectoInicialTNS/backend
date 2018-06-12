@@ -19,14 +19,16 @@
     <property name="current_session_context_class">thread</property>
 
 	<!-- Auto generate db-->
-    <!--  <property name="hibernate.hbm2ddl.auto">create</property> 
-    -->
+    <!-- <property name="hibernate.hbm2ddl.auto">create</property> 
+     -->
     
     <!-- Set "true" to show SQL statements -->
     <property name="hibernate.show_sql">true</property>
     
     <!-- mapping class using annotation -->
+    <mapping class="com.tns.backend.model.User"/>
 	<mapping class="com.tns.backend.model.Flight"/>
+	
 	
   </session-factory>   
 </hibernate-configuration>
