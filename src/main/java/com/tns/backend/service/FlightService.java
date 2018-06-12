@@ -8,8 +8,8 @@ import java.util.List;
 public interface FlightService {
 
     /**
-     * return all the flights
-     * @return, a list of the flights
+     * retorna todos los vuelos que hay
+     * @return, una lista con todos los vuelos
      */
     List<Flight> getAllFlights();
 }

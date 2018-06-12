@@ -13,7 +13,7 @@ public interface PersistenceFlightDao {
 	public List<Flight> getAllFlights();
 
 	/**
-	 * Pobla la base de datos con al menos 5 vuelos
+	 * Puebla la base de datos con al menos 5 vuelos
 	 */
 	public void populateDB();
 }

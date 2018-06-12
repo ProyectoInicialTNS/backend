@@ -120,4 +120,6 @@ public class Flight {
     public void setFinalCost(long finalCost){
     	this.finalCost = finalCost;
     }
+    
+    
 }

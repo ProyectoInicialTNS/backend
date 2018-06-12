@@ -31,42 +31,27 @@ allprojects {
 def weldVersion = '2.3.3.Final'
 
 dependencies {
-
-    // https://mvnrepository.com/artifact/org.springframework/spring-core
-    //compile group: 'org.springframework', name: 'spring-core', version: '5.0.6.RELEASE'
-
     //test
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'org.glassfish.jersey.core:jersey-common:2.22.2' //para compilarlos de manera correcta
+	//testCompile group: 'org.jboss.as', name: 'jboss-as-arquillian-container-remote', version: '7.1.1.Final'
+	//testCompile group: 'org.jboss.arquillian.junit', name: 'arquillian-junit-container', version: '1.4.0.Final'
+	//testCompile group: 'org.jboss.osgi.spi', name: 'jbosgi-spi', version: '3.0.1.Final'
+    
+    
     //REST API
     compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1'
 
-   	// https://mvnrepository.com/artifact/javax.enterprise/cdi-api
- 	// https://mvnrepository.com/artifact/javax.enterprise/cdi-api
+   	//javax
 	provided group: 'javax.enterprise', name: 'cdi-api', version: '1.2'
-
-	// https://mvnrepository.com/artifact/javax.inject/javax.inject
 	compile group: 'javax.inject', name: 'javax.inject', version: '1'
-	// https://mvnrepository.com/artifact/org.jboss.spec/jboss-javaee-6.0
-	//provided group: 'org.jboss.spec', name: 'jboss-javaee-6.0', version: '1.0.0.Final', ext: 'pom'
-	// https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging
+	
+	//Jboss
 	compile group: 'org.jboss.logging', name: 'jboss-logging', version: '3.3.2.Final'
-
 	
 	//Persistencia
 	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2.jre7'
-
 	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.1.0.Final'
-	//Para compilar los test de manera correcta
-	testCompile 'org.glassfish.jersey.core:jersey-common:2.22.2'
-	
-
-
- 
-
-
-
-
-
 }
 
 task copyWarFile(type: Copy) {

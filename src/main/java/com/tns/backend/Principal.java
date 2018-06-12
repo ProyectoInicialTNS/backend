@@ -16,6 +16,9 @@ public class Principal extends Application {
     @Named("persistenceFlightDaoHibernateImp")
 	private PersistenceFlightDao persistenceFlightDao;
 	
+	/**
+	 * Metodo usado para poblar la base de datos justo despues de su creacion
+	 */
 	@PostConstruct
 	public void postConstruct(){	
 		//persistenceFlightDao.populateDB();

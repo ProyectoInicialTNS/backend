@@ -20,6 +20,10 @@ public class FlightController {
     @Named("flightServiceImpHibernate")
 	private FlightService flightService;
 
+	/**
+	 * Obtiene todos los vuelos que hay actualmente cuando le llegue la peticion GET /tns/vuelos/
+	 * @return todos los vuelos
+	 */
 	@GET
 	@Path("/")
 	public Response obtenerVuelos() {		
