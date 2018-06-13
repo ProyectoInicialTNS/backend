@@ -17,3 +17,32 @@
 </md-content>
 </div>
 <hr>
+
+<md-content class="md-padding">
+    <div layout="row" ng-repeat="flightList in flightMatrix">
+            <div flex-xs flex-gt-xs="33" ng-repeat="flight in flightList"  layout="column" style="display: flex;
+        align-items: stretch;">
+                <md-card  >
+                    <img ng-src={{flight.flightImageUrl}} class="md-card-image" alt="Washed Out" style="max-height: 150px;min-height: 150px">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{flight.airline}}</span>
+                            <div>
+                                <b>Fecha: </b>{{flight.flightDay}}</div>
+                            <div>
+                                <b>Costo: </b>${{flight.finalCost}} COP</div>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content layout="row" layout-align="center">
+                        <div style="color: #5D4949; font-family: 'Source Sans Pro', sans-serif; font-size: 34px">{{flight.origin}} - {{flight.destiny}}</div>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end">
+                        <md-button class="md-primary md-hue-2" ng-click="reservateDialog(flight.id,$event)">Reservar</md-button>
+                    </md-card-actions>
+                </md-card>
+
+            </div>
+        </div>
+
+    </div>
+</md-content>

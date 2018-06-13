@@ -10,7 +10,7 @@ angular.module('myApp.home', ['ngRoute'])
     });
   }])
 
-  .controller('HomeCtrl', ['$scope', '$mdDialog', 'ApiFlight', function ($scope, $mdDialog, ApiFlight) {
+  .controller('HomeCtrl', ['$scope', '$mdDialog', 'ApiFlight','DisplayFlights', function ($scope, $mdDialog, ApiFlight,DisplayFlights) {
     //define variables
     
     $scope.reservateDialog = reservateDialog;
@@ -21,39 +21,12 @@ angular.module('myApp.home', ['ngRoute'])
     ApiFlight.getAllFlights().then(
       response => {
         var toShow = JSON.parse(JSON.stringify(response.data));
-        $scope.flightMatrix = obtainMatrix(toShow.map(formatAllDates), 3);
+        $scope.flightMatrix = DisplayFlights.obtainMatrix(toShow.map(DisplayFlights.formatAllDates), 3);
         $scope.flightList = response.data;
       }
     );
 
     //functions
-    function formatAllDates(item, index) {
-      item.flightDay = formatDate(new Date(item.flightDay));
-      return item;
-    }
-
-    function obtainMatrix(data, n) {
-      var grid = [], i = 0, x = data.length, col, row = -1;
-      for (var i = 0; i < x; i++) {
-        col = i % n;
-        if (col === 0) {
-          grid[++row] = [];
-        }
-        grid[row][col] = data[i];
-      }
-      return grid;
-    }
-
-    function formatDate(date) {
-      var monthNames = [
-        "Enero", "Febrero", "Marzo",
-        "Abril", "Mayo", "Junio", "Julio",
-        "Agosto", "Septiembre", "Ocutubre",
-        "Noviembre", "Diciembre"
-      ];
-      return date.getHours() + ':' + date.getMinutes() + ' - ' + date.getDate() + '/' + monthNames[date.getMonth()] + '/' + date.getFullYear();
-    }
-
     function reservateDialog(id, ev) {
       $scope.currentFlight = $scope.flightList.filter(flight => flight.id==id)[0]; //obtengo el vuelo
       $mdDialog.show(
