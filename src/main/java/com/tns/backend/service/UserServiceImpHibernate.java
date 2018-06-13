@@ -20,7 +20,6 @@ public class UserServiceImpHibernate implements UserService{
 	
 	@Override
 	public List<Flight> getAllUserFlights(long cedule) {
-		System.out.println("En service--------------");
 		return persistenceUserDao.getAllUserFlights(cedule);
 	}
 

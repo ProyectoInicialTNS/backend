@@ -41,8 +41,7 @@ public class UserController {
 	@POST
 	@Path("/{cedule}/join")
 	public Response joinFlight(@PathParam(value = "cedule") long user,Flight flight) {
-		System.out.println(flight +"-----------------");
-		return Response.status(200).entity(userService.joinFlight(user,flight)).header("Access-Control-Allow-Origin", "*").build();
+		return Response.status(200).header("Access-Control-Allow-Origin", "*").entity(userService.joinFlight(user,flight)).build();
 	}
 
 }
