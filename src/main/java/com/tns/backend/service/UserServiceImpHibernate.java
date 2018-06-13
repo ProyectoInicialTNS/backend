@@ -6,8 +6,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.tns.backend.model.Flight;
-import com.tns.backend.model.User;
-import com.tns.backend.persistence.PersistenceFlightDao;
 import com.tns.backend.persistence.PersistenceUserDao;
 
 @Named("userServiceImpHibernate")

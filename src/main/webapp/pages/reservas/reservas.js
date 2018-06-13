@@ -15,6 +15,8 @@ angular.module('myApp.reservas', ['ngRoute'])
         ApiUser.getAllUserFlights($scope.reservationForm.cedula).then(
           response =>{
             $scope.flightMatrix = DisplayFlights.obtainMatrix(response.data.map(DisplayFlights.formatAllDates), 3);
+          },error =>{
+            $scope.flightMatrix = [];
           }
         );
     }

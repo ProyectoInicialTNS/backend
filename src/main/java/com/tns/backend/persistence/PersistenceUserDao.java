@@ -3,7 +3,6 @@ package com.tns.backend.persistence;
 import java.util.List;
 
 import com.tns.backend.model.Flight;
-import com.tns.backend.model.User;
 
 public interface PersistenceUserDao {
 
