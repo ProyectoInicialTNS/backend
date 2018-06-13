@@ -10,6 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import com.tns.backend.model.Flight;
 import com.tns.backend.service.UserService;
 
 @Path("/usuarios")
@@ -29,18 +30,19 @@ public class UserController {
 	@GET
 	@Path("/{cedule}")
 	public Response getAllUserFlights(@PathParam(value = "cedule") long cedule){
-		System.out.println("En controller--------------");
 		return Response.status(200).entity(userService.getAllUserFlights(cedule)).header("Access-Control-Allow-Origin", "*").build();
 	}
 	
 	/**
-	 * crea un nuevo usuario en la base de datos
-	 * @param user, el usuario a crear
+	 * une al usuario con el vuelo dado
+	 * @param cedule, el usuario a crear
+	 * @param flight, el vuelo
 	 */
 	@POST
-	@Path("/{cedule}")
-	public void createUser(@PathParam(value = "cedule") long user) {
-		userService.createUser(user);
+	@Path("/{cedule}/join")
+	public Response joinFlight(@PathParam(value = "cedule") long user,Flight flight) {
+		System.out.println(flight +"-----------------");
+		return Response.status(200).entity(userService.joinFlight(user,flight)).header("Access-Control-Allow-Origin", "*").build();
 	}
 
 }

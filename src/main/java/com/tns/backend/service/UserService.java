@@ -18,7 +18,9 @@ public interface UserService {
 	/**
 	 * crea un nuevo usuario en la base de datos
 	 * @param user, el usuario a crear
+	 * @param flight, el vuelo
+	 * @return true si se pudo unir, false en lo contrario
 	 */
-	public void createUser(long user);
+	public boolean joinFlight(long user,Flight flightId);
 
 }

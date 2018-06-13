@@ -25,8 +25,8 @@ public class UserServiceImpHibernate implements UserService{
 	}
 
 	@Override
-	public void createUser(long user) {
-		persistenceUserDao.createUser(new User(user));
+	public boolean joinFlight(long user,Flight flightId) {
+		return persistenceUserDao.joinFlight(user,flightId);
 	}
 
 }

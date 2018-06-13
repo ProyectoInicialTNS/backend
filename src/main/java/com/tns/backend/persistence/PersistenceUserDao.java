@@ -15,8 +15,12 @@ public interface PersistenceUserDao {
 	public List<Flight> getAllUserFlights(long cedule);
 	
 	/**
-	 * crea un nuevo usuario en la base de datos
-	 * @param user, el usuario a crear
+	 * Asigna un vuelo dado a un usuario, si el usuario no existe, el usuario es creado.
+	 * No puede ser asignado cuando ya tiene un vuelo en la misma fecha
+	 * @param cedule, la cedula del usuario
+	 * @param flight, el vuelo
+	 * @return true si pudo asignarlo, false de lo contrario
 	 */
-	public void createUser(User user);
+	public boolean joinFlight(long cedule,Flight flight);
+
 }
