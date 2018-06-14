@@ -34,6 +34,7 @@ dependencies {
     //test
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile 'org.glassfish.jersey.core:jersey-common:2.22.2' //para compilarlos de manera correcta
+	testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
 	//testCompile group: 'org.jboss.as', name: 'jboss-as-arquillian-container-remote', version: '7.1.1.Final'
 	//testCompile group: 'org.jboss.arquillian.junit', name: 'arquillian-junit-container', version: '1.4.0.Final'
 	//testCompile group: 'org.jboss.osgi.spi', name: 'jbosgi-spi', version: '3.0.1.Final'
@@ -53,7 +54,6 @@ dependencies {
 	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2.jre7'
 	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.1.0.Final'
 	compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.5'
-	//compile group: 'org.javassist', name: 'javassist', version: '3.22.0-GA'
 	compile group: 'org.codehaus.jackson', name: 'jackson-core-asl', version: '1.1.0'
 	
 	
