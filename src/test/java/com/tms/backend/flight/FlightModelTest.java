@@ -71,20 +71,7 @@ public class FlightModelTest {
         avianca.setDestiny("Bogota");
         Assert.assertEquals("Bogota", avianca.getDestiny());
     }
-    
-    @Test
-    public void deberiaCalcularBienCostoFinalFinSemana(){
-        Flight avianca = new Flight(new Date(1529798400000L),100000L,1,"Avianca","http://neuromarketinglatinoamerica.com/wp-content/uploads/2015/06/avion_avianca.png",
-                "Bogotá", "Cartagena");
-        Assert.assertEquals(300000L,avianca.getFinalCost());
-    }
-    
-    @Test
-    public void deberiaCalcularBienCostoHora(){
-        Flight avianca = new Flight(new Date(1538550000000L),100000L,1,"Avianca","http://neuromarketinglatinoamerica.com/wp-content/uploads/2015/06/avion_avianca.png",
-                "Bogotá", "Cartagena");
-        Assert.assertEquals(200000L,avianca.getFinalCost());
-    }
+   
     
     @Test
     public void deberiaAsignarUsuarioCorrectamente() {
